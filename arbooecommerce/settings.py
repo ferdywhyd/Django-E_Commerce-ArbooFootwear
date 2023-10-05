@@ -77,7 +77,7 @@ WSGI_APPLICATION = "arbooecommerce.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ferdy",
+        "NAME": "arboo",
         "USER": "root",
         "PASSWORD": "ferdy123",
         "HOST": "localhost",
