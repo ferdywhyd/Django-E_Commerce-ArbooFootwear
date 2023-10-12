@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Record
+from .models import Customer, Product
 
 # Create your views here.
 
@@ -15,7 +15,7 @@ def company(request):
     return render(request, "company.html", {})
 
 def login_user(request):
-    records = Record.objects.all()
+    customer = Customer.objects.all()
     # check to see if logging
     if request.method == 'POST':
         username = request.POST['username']
@@ -29,9 +29,13 @@ def login_user(request):
             messages.success(request, "Username dan Password Salah")
             return redirect('login_user')
     else:
-        return render(request, "login.html", {'records':records})
+        return render(request, "login.html", {'customer':customer})
     
 def logout_user(request):
     logout(request)
     messages.success(request, "Berhasil Logout")
     return redirect('home')
+
+def product(request):
+    products = Product.objects.all()
+    return render(request, "product.html", {'products':products})
