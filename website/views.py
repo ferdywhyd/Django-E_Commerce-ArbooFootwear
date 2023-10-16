@@ -11,8 +11,8 @@ def home(request):
 def product(request):
     return render(request, "product.html", {})
 
-def company(request):
-    return render(request, "company.html", {})
+def our_story(request):
+    return render(request, "our_story.html", {})
 
 def login_user(request):
     customer = Customer.objects.all()

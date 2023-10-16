@@ -7,7 +7,7 @@
       <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'product' %}">Product</a></li>
-        <li><a href="{% url 'company' %}">Company</a></li>
+        <li><a href="{% url 'our_story' %}">Our Story</a></li>
       </ul>
     </div>
     <a>
@@ -18,7 +18,7 @@
     <ul class="menu menu-horizontal px-1 bg-base-200 rounded-box">
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'product' %}">Product</a></li>
-      <li><a href="{% url 'company' %}">Company</a></li>
+      <li><a href="{% url 'our_story' %}">Our Story</a></li>
     </ul>
   </div>
   {% if user.is_authenticated %}
@@ -57,7 +57,7 @@
       <div class="hidden lg:flex lg:gap-x-12">
         <a href="{% url 'home' %}" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
         <a href="{% url 'product' %}" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-        <a href="{% url 'company' %}" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+        <a href="{% url 'our_story' %}" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
       </div>
       {% if user.is_authenticated %}
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
