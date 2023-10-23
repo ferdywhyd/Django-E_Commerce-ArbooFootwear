@@ -24,7 +24,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Berhasil Login")
-            return redirect('home')
+            return redirect('dashboard')
         else:
             messages.success(request, "Username dan Password Salah")
             return redirect('login_user')
@@ -39,3 +39,9 @@ def logout_user(request):
 def product(request):
     products = Product.objects.all()
     return render(request, "product.html", {'products':products})
+
+def karyawan(request):
+    return render(request, "karyawan.html", {})
+
+def dashboard(request):
+    return render(request, "dashboard.html", {})
