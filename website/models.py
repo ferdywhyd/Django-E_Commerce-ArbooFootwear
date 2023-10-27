@@ -43,3 +43,22 @@ class Order(models.Model):
 
     def __str__(self):
         return self.product
+    
+
+# ADMIN DASBOARD
+
+PEKERJAAN = ( 
+    ('MARKETING','marketing'),
+    ('ADMIN','admin'),
+    ('DESAINER POLA','desainer pola'),
+    ('JAHIT','jahit'),
+    ('TARIK SOL','tarik sol')
+)
+class Karyawan(models.Model):
+    nama = models.CharField(max_length=100)
+    pekerjaan = models.CharField(max_length=20, choices=PEKERJAAN)
+    alamat = models.CharField(max_length=250, default='', blank=True)
+    no_hp = models.CharField(max_length=13, default='', blank=True)
+
+    def __str__(self):
+        return (f"{self.nama} {self.pekerjaan}")

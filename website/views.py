@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .models import Customer, Product
+from .models import Customer, Product, Karyawan
+from .forms import AddKaryawanForm
 
 # Create your views here.
 
@@ -41,7 +42,35 @@ def product(request):
     return render(request, "product.html", {'products':products})
 
 def karyawan(request):
-    return render(request, "karyawan.html", {})
+    karyawans = Karyawan.objects.all()
+    form = AddKaryawanForm(request.POST or None)
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Berhasil ditambahkan")
+                return redirect('karyawan')
+        context = {'form':form, 'karyawans':karyawans}
+        return render(request, "admin/karyawan.html", context)
+    else:
+        messages.success(request, "Kamu harus login brader")
+        return redirect('home')
+
+# def add_karyawan(request):
+#     karyawans = Karyawan.objects.all()
+#     form = AddKaryawanForm(request.POST or None)
+#     if request.user.is_authenticated:
+#         if request.method == 'POST':
+#             if form.is_valid():
+#                 form.save()
+#                 messages.success(request, "Berhasil ditambahkan")
+#                 return redirect('karyawan')
+#         context = {'form':form, 'karyawans':karyawans}
+#         return render(request, "admin/add_karyawan.html", context)
+#     else:
+#         messages.success(request, "Kamu harus login brader")
+#         return redirect('home')
+
 
 def dashboard(request):
-    return render(request, "dashboard.html", {})
+    return render(request, "admin/dashboard.html", {})

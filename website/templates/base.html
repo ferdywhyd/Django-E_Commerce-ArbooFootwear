@@ -28,7 +28,7 @@
   </head>
   <body>
     {% if user.is_authenticated %}
-      {% include "admin_sidebar.html" %}
+      {% include "admin/admin_sidebar.html" %}
         {% block admin %}
         {% endblock %}
     {% else %}
