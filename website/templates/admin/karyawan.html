@@ -36,104 +36,110 @@
                                      <thead class="bg-gray-50">
                                         <tr>
                                            <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             <div class="flex items-center">
                                              Nama Lengkap
+                                             <a href="?sort=nama"><svg class="w-3 h-3 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                              </svg></a>
+                                             </div>
                                            </th>
                                            <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             <div class="flex items-center">
                                              Pekerjaan
+                                             <a href="?sort=pekerjaan"><svg class="w-3 h-3 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                              </svg></a>
+                                             </div>
                                            </th>
                                            <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             <div class="flex items-center">
                                              No.Handphone
+                                             <a href="?sort=no_hp"><svg class="w-3 h-3 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                              </svg></a>
+                                             </div>
                                            </th>
                                            <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             <div class="flex items-center">
                                              Alamat
+                                             <a href="?sort=alamat"><svg class="w-3 h-3 ml-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+                                              </svg></a>
+                                             </div>
+                                           </th>
+                                           <th scope="col" class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                             Tindakan
                                            </th>
                                         </tr>
                                      </thead>
-                                     {% for karyawans in karyawans %}
+                                     {% for page_karyawan in page_karyawan %}
                                      <tbody class="bg-white">
                                         <tr>
                                            <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                             <span class="font-semibold">{{ karyawans.nama }}</span>
+                                             <span class="font-semibold">{{ page_karyawan.nama }}</span>
                                            </td>
                                            <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              {{ karyawans.pekerjaan }}
+                                              {{ page_karyawan.pekerjaan }}
                                            </td>
                                            <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              {{ karyawans.no_hp }}
+                                              {{ page_karyawan.no_hp }}
                                            </td>
                                            <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              {{ karyawans.alamat }}
+                                              {{ page_karyawan.alamat }}
                                            </td>
+                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
+                                             <a href="#">Edit</a> <span> | </span>
+                                             <a href="{% url 'delete_karyawan' page_karyawan.id %}">Delete</a>
+                                          </td>
                                         </tr>
                                        {% endfor %}
-                                        {% comment %} <tr class="bg-gray-50">
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                              Payment refund to <span class="font-semibold">#00910</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 23 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              -$670
-                                           </td>
-                                        </tr>
-                                        <tr>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                              Payment failed from <span class="font-semibold">#087651</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 18 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              $234
-                                           </td>
-                                        </tr>
-                                        <tr class="bg-gray-50">
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                              Payment from <span class="font-semibold">Lana Byrd</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 15 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              $5000
-                                           </td>
-                                        </tr>
-                                        <tr>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                              Payment from <span class="font-semibold">Jese Leos</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 15 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              $2300
-                                           </td>
-                                        </tr>
-                                        <tr class="bg-gray-50">
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                              Payment from <span class="font-semibold">THEMESBERG LLC</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 11 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              $560
-                                           </td>
-                                        </tr>
-                                        <tr>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                              Payment from <span class="font-semibold">Lana Lysle</span>
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                              Apr 6 ,2021
-                                           </td>
-                                           <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                              $1437
-                                           </td>
-                                        </tr> {% endcomment %}
                                      </tbody>
                                   </table>
+                                  <nav aria-label="Page navigation example">
+                                    <ul class="list-style-none flex">
+                                      <li>
+                                       {% if page_karyawan.has_previous %}
+                                        <a
+                                          class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                                          href="?page={{ page_karyawan.previous_page_number }}"
+                                          aria-label="Previous">
+                                          <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                        {% endif %}
+                                      </li>
+                                      <li>
+                                        <a
+                                          class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                                          href="?page=1"
+                                          >1</a
+                                        >
+                                      </li>
+                                      <li aria-current="page">
+                                        <a
+                                          class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                                          href="?page=2"
+                                          >2</a
+                                        >
+                                      </li>
+                                      <li>
+                                        <a
+                                          class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                                          href="?page=3"
+                                          >3</a
+                                        >
+                                      </li>
+                                      <li>
+                                       {% if page_karyawan.has_next %}
+                                        <a
+                                          class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-white dark:hover:bg-neutral-700 dark:hover:text-white"
+                                          href="?page={{ page_karyawan.next_page_number }}"
+                                          aria-label="Next"
+                                          ><span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                        {% endif %}
+                                      </li>
+                                    </ul>
+                                  </nav>
                                </div>
                             </div>
                          </div>

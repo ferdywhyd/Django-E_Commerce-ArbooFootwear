@@ -62,3 +62,8 @@ class Karyawan(models.Model):
 
     def __str__(self):
         return (f"{self.nama} {self.pekerjaan}")
+    
+class Gajian(models.Model):
+    created_at = models.DateField(auto_now_add=True)
+    nama = models.ForeignKey(Karyawan, on_delete=models.CASCADE)
+    pekerjaan = models.CharField(max_length=20, choices=PEKERJAAN)
