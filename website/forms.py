@@ -13,3 +13,8 @@ class AddKaryawanForm(ModelForm):
             'alamat' : forms.TextInput(attrs={'class':'min-h-[auto] bg-transparent px-3 py-[0.32rem] rounded border mb-3 ml-8'}),
             'no_hp' : forms.TextInput(attrs={'class':'min-h-[auto] bg-transparent px-3 py-[0.32rem] rounded border mb-3 ml-10'})
         }
+
+# class AddFormGajian(ModelForm):
+#     class Meta:
+#         model = Gajian
+#         fields = ('__all__')

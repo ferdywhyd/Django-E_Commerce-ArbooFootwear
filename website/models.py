@@ -61,9 +61,13 @@ class Karyawan(models.Model):
     no_hp = models.CharField(max_length=13, default='', blank=True)
 
     def __str__(self):
-        return (f"{self.nama} {self.pekerjaan}")
+        return self.nama
     
-class Gajian(models.Model):
-    created_at = models.DateField(auto_now_add=True)
+#Gajian Karyawan
+
+class GajianKaryawan(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     nama = models.ForeignKey(Karyawan, on_delete=models.CASCADE)
     pekerjaan = models.CharField(max_length=20, choices=PEKERJAAN)
+    produk = models.ForeignKey(Product, on_delete=models.CASCADE)
+    qty = models.IntegerField(null=False, blank=False)

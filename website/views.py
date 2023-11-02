@@ -75,8 +75,8 @@ def delete_karyawan(request, pk):
         messages.success(request, "Kamu harus Login Braderrr")
         return redirect('home')
     
-    
 def gajian_karyawan(request):
+    
     return render(request, 'admin/gajian_karyawan.html',{})
 
 
